@@ -9,7 +9,7 @@ public class GodFatherCarController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		changeLaneCRV = carChangeLaneCR(transform.position ,new Vector2(0.0f, -3f), 0.5f);
+		changeLaneCRV = carChangeLaneCR(transform.position ,new Vector2(0.0f, -3f), 2.0f);
 		StartCoroutine (changeLaneCRV);
 		isGameStarted = false;
 	}
@@ -19,11 +19,11 @@ public class GodFatherCarController : MonoBehaviour {
 		if (isGameStarted) {
 			if (Input.GetKeyDown (KeyCode.RightArrow)) {
 				StopCoroutine(changeLaneCRV);
-				targetPos = new Vector2 (targetPos.x+1.1f, targetPos.y);
+				targetPos = new Vector2 (targetPos.x+1.06f, targetPos.y);
 				changeLaneCRV = carChangeLaneCR (transform.position, targetPos, 0.2f);
 				StartCoroutine (changeLaneCRV);
 			} else if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-				targetPos = new Vector2 (targetPos.x-1.1f, targetPos.y);
+				targetPos = new Vector2 (targetPos.x-1.06f, targetPos.y);
 				changeLaneCRV = carChangeLaneCR (transform.position, targetPos, 0.2f);
 				StartCoroutine (changeLaneCRV);
 			}
